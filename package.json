@@ -1,0 +1,70 @@
+{
+  "name": "feathers-react-app",
+  "description": "Boilerplate for a react application with a feathers REST API on the backend",
+  "version": "0.0.0",
+  "homepage": "",
+  "main": "backend",
+  "keywords": [
+    "feathers"
+  ],
+  "author": {
+    "name": "Steven Kaufman",
+    "email": "steveplaysguiola@gmail.com"
+  },
+  "contributors": [],
+  "bugs": {},
+  "directories": {
+    "lib": "backend",
+    "test": "test/",
+    "config": "config/"
+  },
+  "engines": {
+    "node": "^11.0.0",
+    "yarn": ">= 0.18.0"
+  },
+  "scripts": {
+    "test": "yarn run eslint && NODE_ENV= yarn run jest",
+    "eslint": "eslint backend/. test/. --config .eslintrc.json",
+    "dev": "nodemon backend/",
+    "start": "concurrently 'yarn start:frontend' 'yarn start:backend'",
+    "start:frontend": "webpack --watch",
+    "start:backend": "nodemon backend",
+    "jest": "jest"
+  },
+  "dependencies": {
+    "@feathersjs/configuration": "^2.0.4",
+    "@feathersjs/errors": "^3.3.4",
+    "@feathersjs/express": "^1.2.7",
+    "@feathersjs/feathers": "^3.2.3",
+    "compression": "^1.7.3",
+    "cors": "^2.8.5",
+    "helmet": "^3.15.0",
+    "serve-favicon": "^2.5.0",
+    "winston": "^3.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "concurrently": "^4.1.1",
+    "eslint": "^6.1.0",
+    "eslint-config-standard": "^13.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-standard": "^4.0.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "jest": "^24.8.0",
+    "nodemon": "^1.18.7",
+    "prop-types": "^15.7.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2",
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6"
+  }
+}
