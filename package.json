@@ -3,7 +3,7 @@
   "description": "Boilerplate for a react application with a feathers REST API on the backend",
   "version": "0.0.0",
   "homepage": "https://github.com/steve-kaufman/todo-app",
-  "main": "backend",
+  "main": "index.js",
   "author": {
     "name": "Steven Kaufman",
     "email": "steveplaysguiola@gmail.com"
@@ -13,13 +13,16 @@
     "eslint": "eslint backend/. test/. --config .eslintrc.json",
     "dev": "nodemon backend/",
     "start": "concurrently 'yarn start:frontend' 'yarn start:backend'",
-    "start:frontend": "concurrently 'webpack --watch' 'sass --watch frontend/sass:frontend/styles'",
-    "start:backend": "nodemon backend"
+    "start:frontend": "concurrently 'webpack --watch' 'sass --watch react/sass:react/styles'",
+    "start:backend": "nodemon ."
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
+    "@feathersjs/express": "^4.3.10",
+    "@feathersjs/feathers": "^4.3.10",
+    "@feathersjs/socketio": "^4.3.10",
     "babel-loader": "^8.0.6",
     "concurrently": "^4.1.1",
     "css-loader": "^3.2.0",

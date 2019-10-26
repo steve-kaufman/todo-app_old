@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   mode: 'development',
-  entry: './frontend/index.jsx',
+  entry: './react/index.jsx',
   output: {
     path: path.join(__dirname, '/public'),
     publicPath: '/',
@@ -20,14 +20,14 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        include: path.join(__dirname, 'frontend/styles'),
+        include: path.join(__dirname, 'react/styles'),
         use: ['style-loader', 'css-loader']
       }
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './frontend/index.html',
+      template: './react/index.html',
       filename: './index.html'
     })
   ]
