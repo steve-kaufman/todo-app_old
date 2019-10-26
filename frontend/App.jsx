@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
+import Form from './components/Form.jsx'
 
 export default class App extends Component {
-  render() {
+  render () {
     return (
-      <div>
-        <h1>Hello</h1>
+      <div className="container">
+        <Form />
       </div>
     )
   }

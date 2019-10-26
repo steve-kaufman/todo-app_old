@@ -1,9 +1,11 @@
+const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
+  mode: 'development',
   entry: './frontend/index.jsx',
   output: {
-    path: __dirname + '/public',
+    path: path.join(__dirname, '/public'),
     publicPath: '/',
     filename: 'bundle.js'
   },
@@ -15,6 +17,11 @@ module.exports = {
         use: {
           loader: 'babel-loader'
         }
+      },
+      {
+        test: /\.css$/,
+        include: path.join(__dirname, 'frontend/styles'),
+        use: ['style-loader', 'css-loader']
       }
     ]
   },
