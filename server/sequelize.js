@@ -10,6 +10,8 @@ module.exports = app => {
     }
   })
 
+  sequelize.sync()
+
   app.set('sequelize', sequelize)
   app.set('paginate', {
     default: 10,

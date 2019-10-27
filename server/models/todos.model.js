@@ -10,7 +10,7 @@ module.exports = app => {
     completed: {
       type: Sequelize.BOOLEAN,
       allowNull: false,
-      defaultValue: true
+      defaultValue: false
     }
   }, {
     hooks: {
@@ -19,6 +19,8 @@ module.exports = app => {
       }
     }
   })
+
+  todos.sync()
 
   return todos
 }
