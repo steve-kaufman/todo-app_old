@@ -2,6 +2,10 @@ const feathers = require('@feathersjs/feathers')
 const socketio = require('@feathersjs/socketio')
 const express = require('@feathersjs/express')
 
+const sequelize = require('./sequelize')
+
+const todos = require('./services/todos')
+
 const app = express(feathers())
 
 // Static serve
@@ -12,9 +16,11 @@ app.use(express.json())
 app.configure(socketio())
 // Enable REST services
 app.configure(express.rest())
+// Configure sequelize
+app.configure(sequelize)
 
 // Register services
-// ex. app.use('/service', new Service())
+app.configure(todos)
 
 // Connect to stream
 app.on('connection', conn => app.channel('stream').join(conn))

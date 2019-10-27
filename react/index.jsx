@@ -1,8 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './App.jsx'
-import './styles/index.css'
 
-const HtmlEntry = document.getElementById('main')
+import Form from './Form.jsx'
+import List from './List.jsx'
 
-ReactDOM.render(<App />, HtmlEntry)
+const htmlEntryForm = document.getElementById('form')
+const htmlEntryList = document.getElementById('list')
+
+ReactDOM.render(<Form />, htmlEntryForm)
+ReactDOM.render(<List />, htmlEntryList)

@@ -30,5 +30,8 @@ module.exports = {
       template: './react/index.html',
       filename: './index.html'
     })
-  ]
+  ],
+  externals: {
+    app: 'app'
+  }
 }
