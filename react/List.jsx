@@ -1,4 +1,6 @@
 import React from 'react'
+import Todo from './components/Todo.jsx'
+
 import app from 'app'
 
 export default class List extends React.Component {
@@ -22,16 +24,22 @@ export default class List extends React.Component {
     })
   }
 
+  setCompleted (isCompleted, id) {
+    app.service('todos').patch(id, {
+      completed: isCompleted
+    })
+  }
+
   render () {
     return (
       <ul className="list-group text-dark">
         { this.state.todos.map((todo, index) => {
           return (
-            <li key={index}
-              className="list-group-item d-flex justify-content-between align-items-center">
-              { todo.name }
-              <input type="checkbox" />
-            </li>
+            <Todo
+              key={index}
+              todo={todo}
+              setCompleted={this.setCompleted.bind(this)}
+            />
           )
         })}
       </ul>

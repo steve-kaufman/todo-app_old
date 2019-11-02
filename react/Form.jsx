@@ -37,7 +37,7 @@ export default class Form extends React.Component {
           <label htmlFor="name" className="h5 mr-2">Name:</label>
           <input onChange={ this.onNameChange.bind(this) } id="name" className="form-control" type="text" />
         </div>
-        <button type="submit" className="btn btn-danger rounded-circle ml-2"
+        <button type="submit" className="btn btn-success rounded-circle ml-2"
           style={ buttonStyle }>+</button>
       </form>
     )
